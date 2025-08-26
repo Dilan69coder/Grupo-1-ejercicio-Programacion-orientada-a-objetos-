@@ -19,6 +19,9 @@ public class Ejercicio1 {
     int producto = sc.nextInt();
     System.out.print("Ingrese el descuento del producto");
     int descuento = sc.nextInt();
+    double totaldescuento = (descuento * producto)/100;
+    double total = (producto - totaldescuento);
+        System.out.println("el total de tu compra aplicando el "+ descuento + "% de descuento es de "+ total);
     
     
     }
