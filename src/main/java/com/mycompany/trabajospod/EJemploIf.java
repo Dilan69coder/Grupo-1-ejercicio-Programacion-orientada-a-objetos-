@@ -11,8 +11,6 @@ import java.util.Scanner;
  * @author dilan
  */
 public class EJemploIf {
-    public class Ejemplos {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] estudiantes = {"Camilo", "Ana", "Sara", "Jhon", "Pablo"};
@@ -38,4 +36,4 @@ public class EJemploIf {
     }
 }
     
-}
+
