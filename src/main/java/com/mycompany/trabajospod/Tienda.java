@@ -17,11 +17,10 @@ import java.util.ArrayList;
 public class Tienda { 
     String nombre ;
     int precio;
-    
 public static class Alimento extends Tienda{
     boolean refrigeracion;
     String vencimiento;
-    
+  
     public Alimento(String nombre, int precio, boolean refrigeracion, String vencimiento) {
             this.nombre = nombre;
             this.precio = precio;
@@ -85,36 +84,33 @@ public static void main(String[] arg){
                     String nombre = sc.nextLine();
                     System.out.println("Precio ");
                     int precio = sc.nextInt();
-                    sc.nextInt();
+                    sc.nextLine();
                     
-                    if (tipo == "A"){
-                        System.out.println("requiere refrigeracion(S/N) ");
-                            String ref = sc.nextLine();
-                            boolean refrigeracion = false;
-                            if (ref.equalsIgnoreCase("S"))
-                                refrigeracion = true;
-                        System.out.println("Fecha de vencimiento (dd/mm/aa)");
+                    if (tipo.equalsIgnoreCase("A")){
+                         System.out.print("¿Requiere refrigeración? (S/N): ");
+                            boolean refrigeracion = sc.nextLine().equalsIgnoreCase("S");
+                            System.out.print("Fecha de vencimiento (dd/mm/aa): ");
                             String vencimiento = sc.nextLine();
-                            sc.nextLine();
-                                
+                           
+                    productos.add(new Alimento(nombre,precio,refrigeracion,vencimiento));
                     }
-                    else if (tipo == "E"){
+                    else if (tipo.equalsIgnoreCase("E")){
                         System.out.println("Marca de "+ nombre +" ");
                             String marca = sc.nextLine();
                         System.out.println("Garantia (Meses) ");
                             int meses = sc.nextInt();
                         System.out.println("Consumo electrico (A,B,C,D,E,F)");
-                            String consumo = sc.nextLine();
-                            sc.nextLine();
-                            
+                            String consumo = sc.nextLine();// A,B                            
+                    productos.add(new Electro(nombre,precio,marca,meses,consumo));
+
                     }
                     else {
                         System.out.print("Caracter invalido vuelve a ingresarlo ");
                             i--;
-                    
+                               
                 }
-                    break;
                 }
+                break;
         
             
             case 2:
