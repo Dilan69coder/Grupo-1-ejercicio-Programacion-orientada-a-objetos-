@@ -56,11 +56,8 @@ public static class Electro extends Tienda{
 }
 public static void main(String[] arg){
     Scanner sc = new Scanner(System.in);
-    Tienda tienda = new Tienda();
-    ArrayList<Tienda> productos = new ArrayList<>();
+    ArrayList<Tienda> articulo = new ArrayList<>();
     int opcion;
-    String clas;
-    int contador = 0;
     do{
         System.out.println("\n-- Cajero de Tienda --");
         System.out.println("1. Ingrese los productos a pagar ");
@@ -86,13 +83,13 @@ public static void main(String[] arg){
                     int precio = sc.nextInt();
                     sc.nextLine();
                     
-                    if (tipo.equalsIgnoreCase("A")){
+                    if (tipo.equalsIgnoreCase("A")){   
                          System.out.print("¿Requiere refrigeración? (S/N): ");
                             boolean refrigeracion = sc.nextLine().equalsIgnoreCase("S");
                             System.out.print("Fecha de vencimiento (dd/mm/aa): ");
                             String vencimiento = sc.nextLine();
                            
-                    productos.add(new Alimento(nombre,precio,refrigeracion,vencimiento));
+                    articulo.add(new Alimento(nombre,precio,refrigeracion,vencimiento));
                     }
                     else if (tipo.equalsIgnoreCase("E")){
                         System.out.println("Marca de "+ nombre +" ");
@@ -101,7 +98,7 @@ public static void main(String[] arg){
                             int meses = sc.nextInt();
                         System.out.println("Consumo electrico (A,B,C,D,E,F)");
                             String consumo = sc.nextLine();// A,B                            
-                    productos.add(new Electro(nombre,precio,marca,meses,consumo));
+                    articulo.add(new Electro(nombre,precio,marca,meses,consumo));
 
                     }
                     else {
@@ -114,12 +111,12 @@ public static void main(String[] arg){
         
             
             case 2:
-                if (productos.isEmpty()) {
+                if (articulo.isEmpty()) {
                         System.out.println("\n No hay productos");
                     } else {
                     int total1 = 0;
                         System.out.println("\n--Factura--");
-                        for (Tienda p : productos) {
+                        for (Tienda p : articulo) {
                             System.out.println("----------------------");
                             if (p instanceof Tienda.Alimento) {
                                 ((Tienda.Alimento) p).mostrar();
@@ -134,7 +131,7 @@ public static void main(String[] arg){
                     break;
                 
                 case 3:
-                    System.out.println("Saliendo del sistem");
+                    System.out.println("Saliendo del sistema");
                 break;
 
         }
