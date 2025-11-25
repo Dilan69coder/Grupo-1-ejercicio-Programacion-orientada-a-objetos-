@@ -21,6 +21,12 @@ public class US_STATE {
             switch(opc) {
                 case 1:
                     sc.nextLine();
+                    System.out.println("Cuantos empleados desea registrar");
+                    int cant = sc.nextInt();
+                    
+                    
+                    for(int i = 0;i < cant; i++ ){
+                        sc.nextLine();
 
                     System.out.print("Nombre: ");
                     String nombre = sc.nextLine();
@@ -39,6 +45,7 @@ public class US_STATE {
                     emp.calcularSalario(); 
 
                     nomina.agregarEmpleado(emp);
+                    }
 
                     break;
 

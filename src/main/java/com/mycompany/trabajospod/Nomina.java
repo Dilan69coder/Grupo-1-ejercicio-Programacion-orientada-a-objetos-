@@ -21,6 +21,6 @@ public class Nomina {
         }
 
         System.out.println("TOTAL A PAGAR: $" + total);
-        System.out.println("=====================================\n");
+        System.out.println("======================================\n");
     }
 }

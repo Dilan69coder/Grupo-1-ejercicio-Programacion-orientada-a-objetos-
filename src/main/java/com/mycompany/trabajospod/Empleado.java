@@ -40,6 +40,7 @@ public class Empleado {
         System.out.println("Seguridad Social (4%): $" + seguridad);
 
 //Retencion
+        System.out.println("Salario minimo actual:  "+(minimo));
         if (sueldo >= minimo * 3 && sueldo <= minimo * 5) {
             retencion = sueldo * 0.10;
             System.out.println("Retencion del 10% por sueldo mayor a 3 SMMLV y menor a 5 SMMLV total retencion: $" + retencion);
